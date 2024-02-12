@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  springboot-server:
+    image: tungpd35/springboot-simple
+    container_name: springboot-simple
+    ports:
+      - "80:80"
+    volumes:
+      - ./:/app
+    networks:
+      - backend
+networks:
+  backend:
+    name: mysqlnet
+volumes:
+  mysqlserver_data:
+  mysqlserver_config:
